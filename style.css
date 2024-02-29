@@ -1,0 +1,994 @@
+:root {
+    --primary-color: #252b42;
+    --secondary-color: #ffffff;
+    --accent-color: #23a6f0;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header,
+footer {
+    flex: 0 0 10vh;
+}
+
+main {
+    flex: 1;
+}
+
+#top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 5px 40px;
+    background: #252b42;
+    position: relative;
+    z-index: 1;
+}
+
+.top{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#navbar-follow{
+    margin-left: auto;
+}
+
+#navbar-info{
+    margin-right: auto;
+}
+
+#header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0px 30px;
+    background: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    position: relative;
+    margin-top: 0rem;
+}
+
+#header:first-child{
+    margin-top: 0;
+}
+
+.logo{
+    width: 30%;
+}
+
+.navbar ul{
+    display: flex;
+    align-items: center;
+    justify-content: central;
+}
+
+.navbar ul li{
+    list-style: none;
+    padding: 0 10px;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+#navbar-right ul li a{
+    color: #23a6f0;
+}
+
+#navbar-right ul li a:hover{
+    color: #000000;
+}
+
+#navbar-left ul li a{
+    color: #000000;
+}
+
+#navbar-left ul li a:hover{
+    color: #23a6f0;
+}
+
+#navbar-right{
+    margin-left: auto;
+}
+
+#navbar-logo{
+    margin-right: -250px;
+}
+
+@media (max-width: 968px){
+    #navbar-info{
+        display: none;
+    }
+
+    #navbar-right{
+        display: none;
+    }
+}
+
+/* ----------------------------------------------- SLIDER ----------------------------------------*/
+#main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 0rem;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+#main:first-child{
+    margin-top: 0;
+}
+
+.slider {
+    position: absolute;
+    height: 900px;
+    width: 100%;
+    max-width: 1920px;
+}
+  
+.slides {
+    display: flex;
+}
+  
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 900px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+}
+  
+.slide.active {
+    opacity: 1; 
+}
+
+.prevBtn, .nextBtn {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px; /* Defina a largura dos botões como 50px */
+    margin: auto 0; /* Centralize os botões verticalmente */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    opacity: 0; /* Inicie com opacidade zero */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.prevBtn:hover, .nextBtn:hover {
+    opacity: 1; /* Defina a opacidade como 1 quando o mouse passar por cima */
+}
+
+.prevBtn {
+    left: 0px; /* Posicione o botão prevBtn à esquerda */
+}
+  
+.nextBtn {
+    right: 0px; /* Posicione o botão nextBtn à direita */
+}
+
+.option1, .option2, .option3{
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    bottom: 20px;
+}
+
+.option1{
+    left: calc(50% - 98px);
+}
+
+.option2{
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.option3{
+    right: calc(50% - 98px);
+}
+
+.optionZ.activeButton .button-image{
+    background-image: url('img/slideactive.svg');
+}
+
+.text-slider{
+    z-index: 4;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.text-slider.activeText {
+    opacity: 1; 
+}
+
+.text-slider-1{
+    top: 50%;
+    left: 40%;
+}
+
+.text-slider-2{
+    top: 50%;
+    left: 65%;
+}
+
+.text-slider h5 {
+    font-weight: bolder;
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+}
+
+.text-slider h1 {
+    font-size: 58px;
+    line-height: 124px;
+    margin-bottom: 10px;
+    display: flex;
+    color: #ffffff;
+}
+
+.text-slider h4 {
+    font-size: 20px;
+    margin-bottom: 30px;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+}
+
+.button-shop1{
+    background-color: #2dc071;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    height: 60px;
+    color: #ffffff;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.button-shop2{
+    background-color: #FFC222;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    height: 60px;
+    color: #ffffff;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+/*-------------------------------------------------------------------------------------------------------*/
+
+.shop-cards {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    position: absolute;
+    top: 115%; /* Isso garante que a div shop-cards comece após a parte inferior da div slider */
+    width: 100%;/* Isso garante que a div shop-cards sempre esteja no final do container */
+    margin-top: 27px;
+    align-items: center;
+}
+
+.shop-cards-text{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.shop-cards-text p{
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.shop-cards-text h3{
+    font-size: 24px;
+}
+
+
+.grid-container {
+    width: 100%;
+    height: 800px;
+    max-width: 900px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 25%);
+    gap: 15px;
+}
+
+.grid-image{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-start;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    object-fit: cover;
+}
+
+.grid-image-1{
+    grid-row: 1/3;
+    grid-column: 1/3;
+}
+
+.grid-image-2{
+    grid-row: 1/3;
+}
+
+.grid-image button{
+    height: 48px;
+    width: 170px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+.grid-image-2 button{
+    width: 136px;
+}
+
+.grid-image-4 button{
+    width: 120px;
+}
+
+/*------------------------------------------------------------------------------------------------*/
+
+
+.product-cards {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    position: absolute;
+    top: 185%; /* Isso garante que a div shop-cards comece após a parte inferior da div slider */
+    width: 100%;/* Isso garante que a div shop-cards sempre esteja no final do container */
+    margin-top: 27px;
+    align-items: center;
+}
+
+.product-cards-text{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.product-cards-text p{
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.product-cards-text h3{
+    font-size: 24px;
+}
+
+.product-cards-text h4{
+    font-size: 20px;
+    font-weight: lighter;
+    opacity: 0.6;
+}
+
+.grid-container-products {
+    width: 100%;
+    height: 1250px;
+    max-width: 900px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 0.7fr 1fr 0.7fr;
+    gap: 15px;
+}
+
+.products-image{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    object-fit: cover;
+}
+
+.products-image h5{
+   font-weight: bolder;
+   
+}
+
+.product-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-info h5{
+    margin-top: 5px;
+    font-weight: 16px;
+}
+
+.product-info a{
+    font-weight: 14px;
+    text-decoration: none;
+    color: #737373;
+}
+
+.price-list {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+}
+
+.price-list li {
+    flex: 1;
+    margin: 0 3px; /* This will add a 20px margin on the left and right of each item */
+    text-align: center;
+    font-weight: bolder;
+}
+
+.price-list-1{
+    color: #BDBDBD;
+}
+
+.price-list-2{
+    color: #23856D;
+}
+
+/*------------------------------------------------------------------------------------------------*/
+
+
+.slider-2 {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 355%; /* Isso garante que a div shop-cards comece após a parte inferior da div slider */
+    height: 900px;
+    width: 100%;
+    max-width: 1920px;
+}
+
+  
+.slides-2 {
+    display: flex;
+}
+  
+.slide-2 {
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+    height: 900px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+}
+  
+.slide-2.active-2 {
+    opacity: 1; 
+}
+
+.prevBtn-2, .nextBtn-2 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px; /* Defina a largura dos botões como 50px */
+    margin: auto 0; /* Centralize os botões verticalmente */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    opacity: 0; /* Inicie com opacidade zero */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.prevBtn-2:hover, .nextBtn-2:hover {
+    opacity: 1; /* Defina a opacidade como 1 quando o mouse passar por cima */
+}
+
+.prevBtn-2 {
+    left: 0px; /* Posicione o botão prevBtn à esquerda */
+}
+  
+.nextBtn-2 {
+    right: 0px; /* Posicione o botão nextBtn à direita */
+}
+
+.optionX.activeButton-2 .button-image{
+    background-image: url('img/slideactive.svg');
+}
+
+.option4, .option5{
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    bottom: 20px;
+}
+
+.option4{
+    left: 50% ;
+    transform: translateX(-50%);
+}
+
+.option5{
+    left: 50%;
+    transform: translateX(50%);
+}
+
+.cara{
+    width: 25%;
+    height: 85%;
+    margin-right: 150px;
+    min-width: 480px;
+}
+
+.slide-cara{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.text-slider2{
+    position: relative;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.text-slider2.activeText-2 {
+    opacity: 1; 
+}
+
+.text-slider-3{
+    top: 50%;
+    left: 100%;
+}
+
+.text-slider-4{
+    top: -10%;
+    left: 130%;
+}
+
+.text-slider2 h5 {
+    font-weight: bolder;
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+}
+
+.text-slider2 h1 {
+    font-size: 58px;
+    line-height: 124px;
+    margin-bottom: 10px;
+    display: flex;
+    color: #ffffff;
+}
+
+.text-slider2 h4 {
+    font-size: 20px;
+    margin-bottom: 30px;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+}
+
+.button-shop12{
+    background-color: #2dc071;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    height: 60px;
+    color: #ffffff;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.button-shop22{
+    background-color: #FFC222;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    height: 60px;
+    color: #ffffff;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.text-slider2 div{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 280px 0px 0px;
+}
+
+.text-slider2 div h5{
+    font-weight: 24px;
+}
+
+/*------------------------------------------------------------------------------------------------*/
+
+.container-fluid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    position: absolute;
+    top: 448%; /* Isso garante que a div shop-cards comece após a parte inferior da div slider */
+    width: 100%;/* Isso garante que a div shop-cards sempre esteja no final do container */
+    margin-top: 27px;
+}
+
+.fluid-image {
+    grid-column: 1;
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    margin-left: 15%;
+}
+
+.fluid-text {
+    width: 65%;
+    grid-column: 2; /* coloca a div fluid-text na segunda coluna */
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
+    align-self: center;
+}
+
+.button-shop13{
+    background-color: #FFFFFF;
+    border-color: #2DC071;
+    cursor: pointer;
+    width: 200px;
+    height: 60px;
+    color: #2DC071;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+/*------------------------------------------------------------------------------------------------*/
+
+.blog {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    position: absolute;
+    top: 510%; /* Isso garante que a div shop-cards comece após a parte inferior da div slider */
+    width: 100%;/* Isso garante que a div shop-cards sempre esteja no final do container */
+    align-items: center;
+}
+
+.blog-text{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blog-text h6{
+    color: #23A6F0;
+    font-size: 14px;
+}
+
+.blog-text h3{
+    color: #252B42;
+    font-size: 40px;
+}
+
+.blog-text p{
+    text-align: center;
+}
+
+.blog-grid {
+    width: 100%;
+    height: 300px;
+    max-width: 900px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 15px;
+}
+
+.blog-image{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 300px;
+    align-items: flex-end;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    object-fit: cover;
+}
+
+.blog-info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.05);
+}
+
+.blog-tags{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+}
+
+.blog-tags li {
+    flex: 1;
+    margin: 0 3px; /* This will add a 20px margin on the left and right of each item */
+    text-align: center;
+    font-weight: bolder;
+    font-size: 12px;
+}
+
+.blog-tags li:hover {
+    flex: 1;
+    margin: 0 3px; /* This will add a 20px margin on the left and right of each item */
+    text-align: center;
+    font-weight: bolder;
+    font-size: 12px;
+    color: #8EC2F2;
+}
+
+.blog-info p{
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: -5px;
+}
+
+.blog-info div{
+    margin-left: 10px;
+}
+
+.blog-info h4{
+    margin-top: -5px;
+    margin-left: 10px;
+}
+
+.blog-icons{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    width: 110%;
+    padding: 0;
+}
+
+.blog-icons li {
+    flex: 1;
+    margin: 0 10px; /* This will add a 20px margin on the left and right of each item */
+    text-align: center;
+    font-weight: bolder;
+    font-size: 12px;
+    width: 100%;
+}
+
+.div-button{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.blog-button{
+    background-color: #FFFFFF;
+    border-color: transparent;
+    cursor: pointer;
+    width: 200px;
+    height: 60px;
+    color: #000000;
+    font-size: 14px;
+    text-align: left;
+    margin: 0 0 10px 5px;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+
+.footer {
+    flex-wrap: wrap;
+    padding: 100px 0;
+    position: absolute;
+    top: 610%; 
+    width: 100%;
+}
+
+.inner-footer {
+    flex-wrap: wrap;
+
+    position: absolute;
+    height: auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-footer {
+    background-color: #ffffff;
+    line-height: 1.4;
+    padding-bottom: 0px;
+}
+
+.inner-footer .wrap {
+    background-color: #f4f4f4;
+    flex-wrap: wrap; /* added to allow wrapping */
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.07);
+}
+
+.inner-footer .wrap > .wrapX {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.inner-footer .top {
+    height: auto; /* changed to auto */
+    line-height: 1.4;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.07);
+}
+
+.top .list-block a {
+    color: #737373;
+    text-decoration: none;
+}
+
+.list-block h5{
+    margin-bottom: 10px;
+}
+
+.list-block ul{
+    padding-left: 0px;
+    margin: 0px;
+}
+
+.list-block ul li{
+    margin-bottom: 10px;
+}
+
+.inner-footer .top .subscribe h3 {
+    margin-bottom: 20px;
+}
+
+.inner-footer p {
+    font-size: 14px;
+}
+
+.inner-footer .search {
+    max-width: 400px;
+}
+
+.inner-footer .search .input {
+    font-size: 14px;
+    border: 2px solid #d4d4d4;
+}
+
+.inner-footer .bottom {
+    padding: 5px 0 5px 6% ;
+}
+
+.inner-footer .bottom h6{
+    opacity: 0.6;
+}
+
+.inner-footer .top p {
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.20000000298023224px;
+    text-align: left;
+}
+
+.inner-footer .top  input {
+    padding: 15px 10px;
+}
+
+.inner-footer .primary-btn {
+    background-color: #23A6F0;
+    color: #FFFFFF;
+}
+
+.dot-title {
+    font-size: 14px;
+    font-weight: bolder;
+    line-height: 34px;
+    color: #000000;
+}
+
+.subscribe h3{
+    color: #000000;
+}
+
+.subscribe p{
+    color: #000000;
+    font-weight: bolder;
+    opacity: 0.6;
+    margin-top: 0px;
+}
+
+.navbar-footer-icons{
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    margin-left: 60%;
+    
+}
+
+.navbar-footer-icons li{
+    margin-left: 15px;
+}
+
+.footer-img{
+    width: 10%;
+}
+
+.inner-footer .topper {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+}
+
+.search button{
+    background-color: #23A6F0;
+    color: #FFFFFF;
+    border-color: transparent;
+    cursor: pointer;
+    height: 50px;
+    
+}
