@@ -564,7 +564,6 @@ main {
 }
 
 .text-slider2{
-    display: inline-flex;
     position: relative;
     transform: translate(-50%, -50%);
     width: 100%;
